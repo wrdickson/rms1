@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
+import Datepicker from './views/Datepicker.vue'
 
 Vue.use(Router)
 
@@ -12,6 +13,17 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home
+    },
+    {
+      path: '/home',
+      name: 'home',
+      component: Home
+
+    },
+    {
+      path: '/datepicker',
+      name: 'datepicker',
+      component: Datepicker
     },
     {
       path: '/about',
