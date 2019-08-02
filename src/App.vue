@@ -23,6 +23,22 @@
             <v-list-item-title>Datepicker</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+        <v-list-item to="/page1">
+          <v-list-item-action>
+            <v-icon>mdi-cube-unfolded</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>Page1</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+        <v-list-item to="/resTable">
+          <v-list-item-action>
+            <v-icon>mdi-cube-unfolded</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>ResTable</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
 
@@ -52,7 +68,24 @@
 </template>
 
 <script>
+  import api from './api/api.js'
   export default {
+    created: function(){
+      //load initial space information
+      var self = this;
+      api.getSpaces().then( function(response){
+        self.$store.commit('setSpaces', response.data.spaces);
+      });
+      api.getSpaceTypes().then( function(response){
+        self.$store.commit('setSpaceTypes', response.data.space_types);
+      });
+      api.getSelectGroups().then( function(response){
+        self.$store.commit('setSelectGroups', response.data.selectGroups);
+      });
+      api.getReservations().then( function(response){
+        self.$store.commit('setReservations', response.data);
+      });
+    },
     props: {
       source: String,
     },

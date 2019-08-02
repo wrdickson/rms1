@@ -16,7 +16,7 @@ export default new Router({
     },
     {
       path: '/home',
-      name: 'home',
+      name: 'homex',
       component: Home
 
     },
@@ -24,6 +24,17 @@ export default new Router({
       path: '/datepicker',
       name: 'datepicker',
       component: Datepicker
+    },
+    {
+      path: '/page1',
+      name: 'page1',
+      component: () => import(/* webpackChunkName: "Page1" */ './components/Page1.vue')
+    },
+    {
+      path: '/resTable',
+      name: 'resTable',
+      component: () => import(/* webpackChunkName: "ResTable */ './views/ResTable.vue')
+
     },
     {
       path: '/about',
