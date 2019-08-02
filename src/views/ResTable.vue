@@ -81,14 +81,14 @@
                       v-if=" space.show_subspaces == '1' "
                       small
                     >
-                    mdi-arrow-down-drop-circle
+                    mdi-arrow-down-drop-circle-outline
                     </v-icon>
                     
                     <v-icon
                       v-if=" space.show_subspaces == '0' && space.subspaces "
                       small
                     >
-                    mdi-arrow-right-drop-circle
+                    mdi-arrow-right-drop-circle-outline
                     </v-icon>
                     
                   </td>
